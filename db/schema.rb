@@ -10,9 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_01_03_014704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "reports", force: :cascade do |t|
+    t.integer "lessor_id"
+    t.integer "tenant_id"
+    t.string "status"
+    t.string "address"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
+  create_table "room_item_comment_photos", force: :cascade do |t|
+    t.bigint "room_item_comment_id"
+    t.text "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_item_comment_id"], name: "index_room_item_comment_photos_on_room_item_comment_id"
+  end
+
+  create_table "room_item_comments", force: :cascade do |t|
+    t.bigint "room_item_id"
+    t.string "name"
+    t.text "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_item_id"], name: "index_room_item_comments_on_room_item_id"
+  end
+
+  create_table "room_items", force: :cascade do |t|
+    t.bigint "room_id"
+    t.string "name"
+    t.text "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_room_items_on_room_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.bigint "report_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_rooms_on_report_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "reports", "users"
+  add_foreign_key "room_item_comment_photos", "room_item_comments"
+  add_foreign_key "room_item_comments", "room_items"
+  add_foreign_key "room_items", "rooms"
+  add_foreign_key "rooms", "reports"
 end
