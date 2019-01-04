@@ -1,1 +1,308 @@
-// Specific CSS for your home-page
+//For Sidebar on home page
+.is-collapsed {
+  margin-left: -244px;
+}
+.sidebar {
+  background-color: #151b26;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  transition: margin-left 250ms ease-out,transform 250ms ease-out;
+  width: 244px;
+
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: normal;
+  text-rendering: optimizeLegibility;
+  height: 100vh;
+
+  .SidebarHeader-sideBurgerIcon {
+    cursor: pointer;
+    fill: #9ca6af;
+    margin-right: 15px;
+    padding: 0 10px;
+  }
+
+  .SideBurgerIcon {
+    height: 26px;
+    width: 50px;
+  }
+
+  .sidebarHeader {
+    align-items: center;      
+    display: flex;
+    flex-shrink: 0;
+    height: 16px;
+    justify-content: space-between;
+    margin: 20px 0;
+    vertical-align: middle;
+    padding-top: 8px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+    
+  }
+
+  .logo {
+    color: white;
+    font-size: 16px;
+    margin-right: 125px;
+  }
+
+  .SidebarHeader-sideBurgerIcon:hover {
+    fill: #fff;
+  }
+
+  .sidebarLinks {   
+    margin-top:10px;
+    color: #d5dce0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #222b37;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    li:hover{
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    
+  }
+
+  li {
+    padding-top: 5px;
+    display: flex;
+    position: relative;
+    padding-left: 20px;
+    margin: 1px;
+    vertical-align: middle;
+    // border: 1px solid red;
+    align-items: center;
+   
+  }
+
+  .selected {
+    background-color: rgba(255,255,255,0.2);    
+
+    i { color: white; }
+  }
+
+
+ 
+  .sidebar-link {    
+    fill: #9ca6af;
+    color: #9ca6af;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    vertical-align: middle;  
+    align-items: baseline;
+
+   
+
+    svg { height: 20px; }
+
+    i { 
+      font-size: 20px;
+      margin-right: 10px;
+     }
+
+    span {
+      float: left;
+      color: white;
+    }
+  }
+
+  .sidebarFavorites, .sidebarCreateReport {
+    border-bottom: 1px solid #222b37;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    position: relative;
+    .sidebarCollapsible {
+      color: #9ca6af;
+      font-size: 14px;
+      margin-left: 10px;
+      padding: 15px 0px;
+    }
+  }
+  .sidebarFavorites:hover, .sidebarCreateReport:hover {
+    .sidebarCollapsible, .MiniIcon {
+      color: white;
+      fill: white;
+    }
+  }
+
+
+}
+
+.left-side {
+  vertical-align: middle;
+}
+
+.Icon {
+  height:15px;
+  fill: #93979C; 
+
+}
+
+.Icon-hide {
+  display: none;
+}
+
+.title {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #151b26; 
+  margin-left: 20px;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 920px;
+  position: relative;
+  background-color: white;
+}
+
+.home-page {
+  display: flex;
+  vertical-align: middle;
+}
+
+.ArrowDownMiniIcon {
+  fill: #93979C; 
+  height: 15px;
+  display: none;
+  margin-top: 4px;
+  position: absolute;
+  right: 10px;
+}
+
+.show-arrow {
+  display: flex;
+}
+
+.TopbarSearchTypeahead {
+  flex: 0 0 auto;
+  height: 70px;
+  position: relative;
+  width: 280px;
+}
+
+.TopbarSearchTypeahead-background {
+  background-color: #fff;
+  height: 100%;
+  margin-left: 15px;
+  padding-left: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.TopbarSearchTypeahead-input:not(:focus) {
+  background-color: #edf1f2;
+  border-color: #edf1f2;
+  width: 250px;
+}
+
+.textInput.textInput--medium {
+  height: 30px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+.TopbarSearchTypeahead-input {
+  border-radius: 4px;
+  color: #151b26;
+  display: block;
+  padding: 1px 15px 0 30px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.15s ease-out,width 0.15s ease-out;
+  width: 100%;
+}
+
+.TopbarSearchTypeahead-icon {
+  fill: #848f99;
+  left: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#topbar_search_input {
+  font-size: 12px;
+}
+
+.TopbarSearchTypeahead-input:focus {
+  width: 511px;
+  outline: none;
+}
+
+.myCr_logo {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.header-logo {  
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.logo-title {
+  // color: #5A2CB0;
+  font-size: 20px;
+  color: white;
+  margin-left: 2px;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.user {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around;
+  text-align: center;
+  height: 25px !important;
+  width: 25px !important;
+  padding: 15px !important;
+  // text-align: center; 
+  // border-radius: 50%; 
+  border: 1px solid #18C3D7;
+  background-color: rgba(24, 196, 215, 0.767);
+  color: white;
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
