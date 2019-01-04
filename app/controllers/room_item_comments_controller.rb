@@ -1,0 +1,2 @@
+class RoomItemCommentsController < ApplicationController
+end

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="home-page">
   <div class="sidebar">
   <a href="/" class="sidebarHeader">
@@ -112,4 +113,15 @@
 
 
 
+
+
+  <%# <div class="login">
+    <% if current_user.present? %>
+      <%= link_to "Go to dashboard", entry_path, class: "btn login-btn"%>
+    <% else %>
+      <%= link_to "Log in", user_session_path, class: "btn login-btn"%>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn login-btn"%>
+    <% end %>
+  </div>
+</div> %>
 
