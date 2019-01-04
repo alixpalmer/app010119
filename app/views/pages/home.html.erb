@@ -1,2 +1,9 @@
-<h1>OMG it works!</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <div class="login">
+    <% if current_user.present? %>
+      <%= link_to "Go to dashboard", entry_path, class: "btn login-btn"%>
+    <% else %>
+      <%= link_to "Log in", user_session_path, class: "btn login-btn"%>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn login-btn"%>
+    <% end %>
+  </div>
+</div>
