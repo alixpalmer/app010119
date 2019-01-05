@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def entry
-    raise
-    @reports = Reports.all
+    @reports = Report.all
   end
 end

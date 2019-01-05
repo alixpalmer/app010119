@@ -1,5 +1,4 @@
 class RoomItem < ApplicationRecord
   belongs_to :room
-  has_many :comments, dependent: :destroy
-
+  has_many :room_item_comments, dependent: :destroy
 end

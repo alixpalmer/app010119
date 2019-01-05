@@ -7,12 +7,11 @@ class ReportsController < ApplicationController
   def new
     @report = Report.new
     @room = Room.new
-    @comment = Comment.new
   end
 
   def show
     @report = Report.find(params[:id])
-    @rooms = @report.rooms
+    @rooms = @report.room.all
 
     respond_to do |format|
       format.html
@@ -30,16 +29,16 @@ class ReportsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.new
     @report = Report.find(params[:id])
-    @comment.user_id = current_user.id
-    @rooms = @report.rooms
+    @rooms = @report.room
+    @room_item_comment = Comment.new
+    @room_item_comment.user_id = current_user.id
   end
 
   def update
-    @eport = ConditionReport.find(params[:id])
-    @conditionreport.update(conditionreport_params)
-    redirect_to condition_report_path(@conditionreport)
+    @report = Report.find(params[:id])
+    @report.update(report_params)
+    redirect_to report_path(@report)
   end
 
   def confirmation
