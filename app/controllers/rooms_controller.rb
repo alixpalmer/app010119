@@ -1,17 +1,14 @@
-class RoomsController < ApplicationController
-
+class RoomsController < ApplicationControllers
   def new
     @report = current_user.report.build
     @room = report.rooms.build
-    @room_item = @room.room_items.build
   end
 
   def create
-    if @room.save && room_item
+    if @room.save
       flash[:success] = "New room created."
+    end
   end
-  end
-
 
   def show
   end
@@ -28,8 +25,6 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:name, :room_items_attributes => [:name])
+    params.require(:room).permit(:id, :report_id, :name)
   end
-
-
 end

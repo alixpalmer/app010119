@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-
   def index
     @report = Report.all
   end
@@ -23,7 +22,6 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new
     @report.rooms.build
-
     if @report.save
       flash[:success] = "New things created."
     else
@@ -47,5 +45,4 @@ class ReportsController < ApplicationController
   # def report_params
   #   params.require(:report).permit(:address, :room_attributes => [:name])
   # end
-
 end
