@@ -1,11 +1,14 @@
-<%= form_for @report do |f| %>
-  Property Address: <%= f.text_field :address %>
-  <%= f.submit %>
+<%= form_with(model: @report, local: true) do |f| %>
+
+    <%= f.label :address, "Report name" %>
+    <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.fields_for :rooms do |r| %>
+        <%= r.label :name, "Name" %>
+        <%= r.text_field :name, class: 'form-control' %>
+      <% end %>
+
+    <%= f.submit ("Create Room") %>
+    <%= params.inspect %>
+
 <% end %>
-
-
-
-
-<!-- render "rooms/new" %> -->
-<!-- render "room_items/new" %> -->
- <!-- render "room_item_comments/new" %> -->

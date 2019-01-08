@@ -1,4 +1,5 @@
 class RoomItem < ApplicationRecord
-  belongs_to :room
-  has_many :room_item_comments, dependent: :destroy
+  belongs_to :room, optional: true, inverse_of: :room_items
+  validates         :name, presence: true
+
 end

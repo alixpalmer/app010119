@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_035656) do
   enable_extension "plpgsql"
 
   create_table "reports", force: :cascade do |t|
-    t.integer "lessor_id"
-    t.integer "tenant_id"
+    t.integer "user_id"
     t.string "status"
     t.string "address"
     t.datetime "created_at", null: false
